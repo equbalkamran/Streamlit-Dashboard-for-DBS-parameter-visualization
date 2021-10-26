@@ -4,4 +4,4 @@ plotly==5.3.1
 Pillow==8.4.0
 requests==2.7.0
 numpy==1.18.1
-io==3.5.0
+io==2.3.10
