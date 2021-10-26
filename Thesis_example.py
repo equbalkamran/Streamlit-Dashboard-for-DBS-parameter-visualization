@@ -70,6 +70,7 @@ fig2 = px.line(z2_2,x='Date', y='value', color='variable')
 st.write('Plot of symptom scores of the patient over time')
 st.plotly_chart(fig2)
 
+st.write('Multi Dimension plot of paramters for dbs tuning sessions')
 z2['Electrode Configuration'] = z2['Electrode Configuration'].apply(np.ceil) 
 fig3d = px.scatter_3d(z2,x='Amplitude', y='Pulse Frequency', z='Pulse Duration',color='Electrode Configuration')
 st.plotly_chart(fig3d)
