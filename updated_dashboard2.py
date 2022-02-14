@@ -13,7 +13,7 @@ import plotly.express as px
 from PIL import Image
 
 st.set_page_config(layout="wide")
-xlsx = pd.ExcelFile('G:\Shared drives\DBS Data Visualization\Masked_dataset.xlsx')
+xlsx = pd.ExcelFile('Masked_dataset.xlsx')
 all_batteries = pd.read_excel(xlsx,'All Batteries')
 pd_demographics=pd.read_excel(xlsx,'PD_Demographics')
 mdt_workflow= pd.read_excel(xlsx,'MDT_Workflow')
