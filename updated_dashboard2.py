@@ -135,8 +135,8 @@ if dashboard:
         col3.plotly_chart(fig)
         col3.write("*Cohort Count : Dummy values*")
         col1,col2=st.columns(2)
-        img1 = Image.open('G:\Shared drives\DBS Data Visualization\img1.png')
-        img2=Image.open('G:\Shared drives\DBS Data Visualization\img2.png')
+        img1 = Image.open('img1.png')
+        img2=Image.open('img2.png')
         if photos:
             col1.image(img1,caption='Shared Image 1')
             col2.image(img2,caption='Shared Image 2')
