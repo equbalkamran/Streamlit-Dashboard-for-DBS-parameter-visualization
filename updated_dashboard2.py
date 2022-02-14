@@ -50,7 +50,7 @@ if battery:
         col1.write('**Battery details:**')
         col1.write(all_batteries.iloc[n1]['V'])
         col1.write(all_batteries.iloc[n1]['Details'])
-        col1.write(all_batteries.iloc[n1]['Comments'])
+        col1.write(all_batteries.iloc[n1]['Unnamed: 7'])
     except IndexError:
         col1.error("Patient's battery details could not be located. Please confirm in sheet 'All Batteries'")
 if demo:
