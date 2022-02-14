@@ -23,9 +23,9 @@ all_physio_outcomes= pd.read_excel(xlsx,'All_Physio_outcomes')
 neuropsych_outcomes= pd.read_excel(xlsx,'Neuropsych_outcomes')
 
 #all_batteries.rename({'MMUH MRN':'MRN'},axis=1,inplace=True)
-all_batteries.rename({'Unnamed: 7':'Comments'},axis=1,inplace=True)
-pd_demographics.rename({'Mater MRN':'MRN'},axis=1,inplace=True)
-pd_postop_outcomes.rename({'MMUH MRN':'MRN'},axis=1,inplace=True)
+#all_batteries.rename({'Unnamed: 7':'Comments'},axis=1,inplace=True)
+#pd_demographics.rename({'Mater MRN':'MRN'},axis=1,inplace=True)
+#pd_postop_outcomes.rename({'MMUH MRN':'MRN'},axis=1,inplace=True)
 
 #%% 
 'Streamlit Design'
