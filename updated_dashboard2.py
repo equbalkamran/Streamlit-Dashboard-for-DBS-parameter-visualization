@@ -86,14 +86,32 @@ if dashboard:
         updrs1=[pd_postop_outcomes.iloc[n3][5],pd_postop_outcomes.iloc[n3][20],pd_postop_outcomes.iloc[n3][38]]
         updrs2=[pd_postop_outcomes.iloc[n3][6],pd_postop_outcomes.iloc[n3][21],pd_postop_outcomes.iloc[n3][39]]
         updrs_off_off=[pd_postop_outcomes.iloc[n3][7],pd_postop_outcomes.iloc[n3][22],pd_postop_outcomes.iloc[n3][40]]
+        off_off_mean=[pd_postop_outcomes[pd_postop_outcomes.columns[7]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[22]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[44]].mean()]
+        off_off_std=[pd_postop_outcomes[pd_postop_outcomes.columns[7]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[22]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[44]].mean()]
         updrs_off_on=[np.nan,pd_postop_outcomes.iloc[n3][23],pd_postop_outcomes.iloc[n3][41]]
+        off_on_mean=[pd_postop_outcomes[pd_postop_outcomes.columns[23]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[41]].mean()]
+        off_on_std=[pd_postop_outcomes[pd_postop_outcomes.columns[23]].std(),pd_postop_outcomes[pd_postop_outcomes.columns[41]].std()]
         updrs_on_off=[np.nan,pd_postop_outcomes.iloc[n3][24],pd_postop_outcomes.iloc[n3][42]]
+        on_off_mean=[pd_postop_outcomes[pd_postop_outcomes.columns[24]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[42]].mean()]
+        on_off_std=[pd_postop_outcomes[pd_postop_outcomes.columns[24]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[42]].mean()]
         updrs_on_on=[pd_postop_outcomes.iloc[n3][8],pd_postop_outcomes.iloc[n3][25],pd_postop_outcomes.iloc[n3][43]]
+        on_on_mean=[pd_postop_outcomes[pd_postop_outcomes.columns[8]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[25]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[43]].mean()]
+        on_on_std=[pd_postop_outcomes[pd_postop_outcomes.columns[8]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[25]].mean(),pd_postop_outcomes[pd_postop_outcomes.columns[43]].mean()]
+        
         fig=go.Figure()
         fig.add_trace(go.Scatter(x=timeline, y=updrs_off_off,mode='lines+markers',name='UPDRS III OFF/OFF'))
         fig.add_trace(go.Scatter(x=timeline, y=updrs_on_on,mode='lines+markers',name='UPDRS III ON/ON'))
         fig.add_trace(go.Scatter(x=timeline, y=updrs_off_on,mode='lines+markers',name='UPDRS III OFF/ON'))
         fig.add_trace(go.Scatter(x=timeline, y=updrs_on_off,mode='lines+markers',name='UPDRS III ON/OFF'))
+        #average plots for updrs III scores
+        fig.add_trace(go.Scatter(x=timeline, y=off_off_mean,mode='lines+markers',name='OFF/OFF Average',error_y=dict(type='data', # value of error bar given in data coordinates
+                                                                array=off_off_std,visible=True)))
+        fig.add_trace(go.Scatter(x=timeline, y=off_on_mean,mode='lines+markers',name='OFF/ON Average',error_y=dict(type='data', # value of error bar given in data coordinates
+                                                                array=off_on_std,visible=True)))
+        fig.add_trace(go.Scatter(x=timeline, y=on_off_mean,mode='lines+markers',name='ON/OFF Average',error_y=dict(type='data', # value of error bar given in data coordinates
+                                                                array=on_off_std,visible=True)))
+        fig.add_trace(go.Scatter(x=timeline, y=on_on_mean,mode='lines+markers',name='ON/ON Average',error_y=dict(type='data', # value of error bar given in data coordinates
+                                                                array=on_on_std,visible=True)))
         col1, col2,col3 = st.columns(3)
         #w=615
         w=450
