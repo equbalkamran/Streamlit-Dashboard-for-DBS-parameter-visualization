@@ -13,7 +13,7 @@ import plotly.express as px
 from PIL import Image
 
 st.set_page_config(layout="wide")
-xlsx = pd.ExcelFile(r'C:\Users\Dell\Desktop\Masked_dataset2.xlsx')
+xlsx = pd.ExcelFile('Masked_dataset2.xlsx')
 all_batteries = pd.read_excel(xlsx,'All Batteries')
 pd_demographics=pd.read_excel(xlsx,'PD_Demographics')
 mdt_workflow= pd.read_excel(xlsx,'MDT_Workflow')
@@ -151,7 +151,7 @@ fig.update_layout(title="AIDS Results",xaxis_title="TimeFrame",yaxis_title="Scor
 col2.plotly_chart(fig)
 st.warning('Some of the AIDS Scores were not available. They have been converted to 0.')
 
-img1 = Image.open('G:\Shared drives\DBS Data Visualization\img1.png')
-img2=Image.open('G:\Shared drives\DBS Data Visualization\img2.png')
+img1 = Image.open('img1.png')
+img2=Image.open('img2.png')
 col1.image(img1,caption='Shared Image 1')
 col2.image(img2,caption='Shared Image 2')
